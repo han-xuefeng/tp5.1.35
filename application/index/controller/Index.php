@@ -1,6 +1,9 @@
 <?php
 namespace app\index\controller;
 
+use think\Config;
+use Yaconf;
+
 class Index
 {
     public function index()
@@ -11,5 +14,14 @@ class Index
     public function hello($name = 'ThinkPHP5')
     {
         return 'hello,' . $name;
+    }
+
+    public function yaconf(){
+        var_dump(Yaconf::get("abc.name"));
+    }
+
+    public function yaml(){
+        $a = config('abc.');
+        var_dump($a);
     }
 }
