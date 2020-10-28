@@ -100,7 +100,6 @@ class Config implements \ArrayAccess
         if (empty($type)) {
             $type = pathinfo($config, PATHINFO_EXTENSION);
         }
-        var_dump($type);
         $object = Loader::factory($type, '\\think\\config\\driver\\', $config);
 
         return $this->set($object->parse(), $name);
